@@ -6,6 +6,7 @@ import Start from './components/Start';
 import Navbar from './components/Navbar';
 function App() {
   return (
+    
     <div className='bg-hero-pattern bg-no-repeat bg-cover overflow-x-hidden'>
       <Navbar />
       <Router>

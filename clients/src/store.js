@@ -11,4 +11,5 @@ const store = configureStore({
     chats: chatsSlice,
   },
 });
+
 export default store;

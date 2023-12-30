@@ -11,7 +11,7 @@ import * as Server from 'socket.io';
 
 const app = express();
 const corsConfig = {
-  origin: 'https://neon-praline-aede82.netlify.app/',
+  origin: process.env.BASE_URL ,
   credentials: true,
 };
 
@@ -29,7 +29,7 @@ const server = app.listen(process.env.PORT, () => {
 const io = new Server.Server(server, {
   pingTimeout: 60000,
   cors: {
-    origin: 'https://neon-praline-aede82.netlify.app/',
+    origin: 'http://localhost:3000',
   },
 });
 io.on('connection', (socket) => {
