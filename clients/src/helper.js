@@ -1,1 +1,1 @@
-export const REACT_APP_SERVER_URL="https://goodspace-server1.onrender.com";
+export const REACT_APP_SERVER_URL='https://goodspace-server1.onrender.com';

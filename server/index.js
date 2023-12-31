@@ -11,7 +11,7 @@ import * as Server from 'socket.io';
 
 const app = express();
 const corsConfig = {
-  origin: process.env.BASE_URL ,
+  origin: '*' ,
   credentials: true,
 };
 
@@ -30,7 +30,7 @@ const server = app.listen(process.env.PORT, () => {
 const io = new Server.Server(server, {
   pingTimeout: 60000,
   cors: {
-    origin: process.env.BASE_URL,
+    origin: '*',
   },
 });
 io.on('connection', (socket) => {
