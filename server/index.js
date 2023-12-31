@@ -22,6 +22,7 @@ app.use('/', userRoutes);
 app.use('/api/chat', chatRoutes);
 app.use('/api/message', messageRoutes);
 mongoose.set('strictQuery', false);
+
 mongoDBConnect();
 const server = app.listen(process.env.PORT, () => {
   console.log(`Server Listening at PORT - ${process.env.PORT}`);

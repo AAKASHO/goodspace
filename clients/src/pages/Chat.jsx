@@ -17,7 +17,8 @@ import { validUser } from '../apis/auth';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 import { useSpeechSynthesis } from 'react-speech-kit';
 import Navbar from '../components/Navbar';
-const ENDPOINT = process.env.REACT_APP_SERVER_URL
+import { REACT_APP_SERVER_URL } from '../helper.js';
+const ENDPOINT = REACT_APP_SERVER_URL;
 let socket, selectedChatCompare;
 
 function Chat(props) {

@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { REACT_APP_SERVER_URL } from '../helper.js';
 const API = (token) =>
   axios.create({
-    baseURL: process.env.REACT_APP_SERVER_URL,
+    baseURL: REACT_APP_SERVER_URL,
     headers: { Authorization: token },
   });
 export const sendMessage = async (body) => {
