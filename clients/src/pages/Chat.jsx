@@ -161,7 +161,7 @@ function Chat(props) {
               <div className='text-white border-[1px] border-[#aabac8] py-3 w-[360px] sm:w-[400px] md:w-[500px] h-[50px] lg:w-[780px] rounded-t-[10px] bg-transparent'>
 
                 <form className='bg-transparent'>
-                  <input className='focus:outline-0 w-[100%] bg-transparent pl-6' type="text" name="message" placeholder="Speach" value={transcript} />
+                  <input className='focus:outline-0 w-[100%] bg-transparent pl-6' type="text" name="message" placeholder="Speech" value={transcript} />
                 </form>
 
               </div>
