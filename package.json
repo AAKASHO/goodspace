@@ -13,16 +13,18 @@
     "prettier": "^3.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js",
+    "build": "npm install --prefix server && npm install --prefix clients && npm run build --prefix clients"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ShakirFarhan/Realtime-Chat.git"
+    "url": ""
   },
-  "author": "Shakir Farhan",
+  "author": "Aakash kumar",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ShakirFarhan/Realtime-Chat/issues"
+    "url": "https://github.com/"
   },
-  "homepage": "https://github.com/ShakirFarhan/Realtime-Chat#readme"
+  "homepage": "https://github.com/"
 }
