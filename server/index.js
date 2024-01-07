@@ -8,11 +8,11 @@ import userRoutes from './routes/user.js';
 import chatRoutes from './routes/chat.js';
 import messageRoutes from './routes/message.js';
 import * as Server from 'socket.io';
-
+import path from 'path';
 const app = express();
 
 const corsConfig = {
-  origin: 'https://goodspaceassignmentakash.netlify.app' ,
+  origin: '*' ,
   credentials: true,
 };
 
@@ -25,13 +25,21 @@ app.use('/api/message', messageRoutes);
 mongoose.set('strictQuery', false);
 
 mongoDBConnect();
+const __dirname = path.resolve();
+
+app.use(express.static(path.join(__dirname, '/clients/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'clients', 'build', 'index.html'));
+})
+
 const server = app.listen(process.env.PORT, () => {
   console.log(`Server Listening at PORT - ${process.env.PORT}`);
 });
 const io = new Server.Server(server, {
   pingTimeout: 60000,
   cors: {
-    origin: 'https://goodspaceassignmentakash.netlify.app',
+    origin: '*',
   },
 });
 io.on('connection', (socket) => {
