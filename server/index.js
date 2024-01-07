@@ -10,8 +10,9 @@ import messageRoutes from './routes/message.js';
 import * as Server from 'socket.io';
 
 const app = express();
+
 const corsConfig = {
-  origin: '*' ,
+  origin: 'https://goodspaceassignmentakash.netlify.app' ,
   credentials: true,
 };
 
@@ -30,7 +31,7 @@ const server = app.listen(process.env.PORT, () => {
 const io = new Server.Server(server, {
   pingTimeout: 60000,
   cors: {
-    origin: '*',
+    origin: 'https://goodspaceassignmentakash.netlify.app',
   },
 });
 io.on('connection', (socket) => {
