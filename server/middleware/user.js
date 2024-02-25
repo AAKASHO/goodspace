@@ -7,6 +7,7 @@ export const Auth = async (req, res, next) => {
     // let token = req.headers.authorization.split(' ')[1]; //when using postman this line
     if (token.length < 500) {
       const verifiedUser = jwt.verify(token, process.env.SECRET);
+      
       const rootUser = await user
         .findOne({ _id: verifiedUser.id })
         .select('-password');
